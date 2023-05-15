@@ -1,5 +1,6 @@
 /*
 Search an element from sorted array/list
+Time Complexity : O(logn)
 */
 
 int binarySearch(List<int> nums, int target) {
