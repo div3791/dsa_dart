@@ -16,7 +16,8 @@ This repository is dedicated to all DSA learners.Hope this will help them a lot
 
 **and many more techniques**
 
-Examples and code can be found in `bin/` directory
+Data structures implementation code can be found in `lib/` directory
+Applications and solutions of data structure can be found in `bin/` directory
 and all unit tests can be found in `test/` directory.
 
 **I will update this repository as i get time from my schedule**

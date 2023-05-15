@@ -1,6 +1,5 @@
+import 'package:dsa_dart/binary_search.dart';
 import 'package:test/test.dart';
-
-import '../../bin/binary_search/binary_search.dart';
 
 void main() {
   group(

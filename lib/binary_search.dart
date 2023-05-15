@@ -1,3 +1,4 @@
+
 /*
 Search an element from sorted array/list
 Time Complexity : O(logn)
