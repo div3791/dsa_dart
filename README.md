@@ -19,4 +19,4 @@ This repository is dedicated to all DSA learners.Hope this will help them a lot
 Examples and code can be found in `bin/` directory
 and all unit tests can be found in `test/` directory.
 
-***I will update this repository as i get time from my schedule**
+**I will update this repository as i get time from my schedule**
