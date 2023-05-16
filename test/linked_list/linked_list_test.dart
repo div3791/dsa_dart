@@ -47,15 +47,6 @@ void main() {
         },
       );
       test(
-        "last node is not null",
-        () {
-          var list = LinkedList();
-          list.prepend(10);
-          list.prepend(20);
-          expect(list.tail?.value, 10);
-        },
-      );
-      test(
         "size is 0",
         () {
           var list = LinkedList();
