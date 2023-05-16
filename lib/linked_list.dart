@@ -1,10 +1,8 @@
-class LinkedListNode {
-  final dynamic value;
-  LinkedListNode? next;
+class LinkedListNode<E> {
+  final E? value;
+  LinkedListNode<E>? next;
 
-  LinkedListNode({this.value}) {
-    next = null;
-  }
+  LinkedListNode({this.value});
 }
 /*
   ----------------------------------
@@ -26,13 +24,13 @@ class LinkedListNode {
   ----------------------------------
 */
 
-class LinkedList {
-  LinkedListNode? head;
-  LinkedListNode? tail;
+class LinkedList<E> {
+  LinkedListNode<E>? head;
+  LinkedListNode<E>? tail;
   int _size = 0;
 
-  LinkedListNode? prepend(value) {
-    var node = LinkedListNode(value: value);
+  LinkedListNode<E>? prepend(E value) {
+    var node = LinkedListNode<E>(value: value);
     if (head == null) {
       tail = node;
     } else {
@@ -43,8 +41,8 @@ class LinkedList {
     return head;
   }
 
-  LinkedListNode? append(value) {
-    var node = LinkedListNode(value: value);
+  LinkedListNode<E>? append(E value) {
+    var node = LinkedListNode<E>(value: value);
     if (head == null) {
       prepend(value);
     } else {
@@ -55,7 +53,7 @@ class LinkedList {
     return tail;
   }
 
-  LinkedListNode? deleteFirst() {
+  LinkedListNode<E>? deleteFirst() {
     if (head == null) return null;
     var item = head;
     head = head?.next;
@@ -63,10 +61,10 @@ class LinkedList {
     return item;
   }
 
-  LinkedListNode? deleteLast() {
+  LinkedListNode<E>? deleteLast() {
     if (tail == null) return null;
     var item = tail;
-    LinkedListNode? current = head;
+    LinkedListNode<E>? current = head;
     while (current?.next != tail) {
       current = current?.next;
     }
@@ -76,9 +74,9 @@ class LinkedList {
     return item;
   }
 
-  LinkedListNode? deleteByValue(value) {
+  LinkedListNode<E>? deleteByValue(E value) {
     if (tail == null) return null;
-    LinkedListNode? current = head;
+    LinkedListNode<E>? current = head;
     while (current != null) {
       if (current.next?.value == value) break;
       current = current.next;
@@ -91,7 +89,7 @@ class LinkedList {
 
   printList() {
     if (head == null) return;
-    LinkedListNode? currentNode;
+    LinkedListNode<E>? currentNode;
     currentNode = head!;
     while (currentNode != null) {
       print('${currentNode.value}');

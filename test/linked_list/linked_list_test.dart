@@ -8,7 +8,7 @@ void main() {
       test(
         "prepend to list",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.prepend(10);
           expect(list.head?.value, 10);
         },
@@ -16,7 +16,7 @@ void main() {
       test(
         "append to list",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.append(10);
           expect(list.tail?.value, 10);
         },
@@ -24,14 +24,14 @@ void main() {
       test(
         "list is empty",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           expect(list.tail?.value, null);
         },
       );
       test(
         "first node is not null",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.prepend(10);
           list.prepend(20);
           expect(list.head?.value, 20);
@@ -40,7 +40,7 @@ void main() {
       test(
         "last node is not null",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.prepend(10);
           list.prepend(20);
           expect(list.tail?.value, 10);
@@ -49,14 +49,14 @@ void main() {
       test(
         "size is 0",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           expect(list.size, 0);
         },
       );
       test(
         "size is 2",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.append(10);
           list.append(20);
           expect(list.size, 2);
@@ -65,7 +65,7 @@ void main() {
       test(
         "delete first",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.append(10);
           list.append(20);
           list.append(30);
@@ -77,7 +77,7 @@ void main() {
       test(
         "delete last",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.append(10);
           list.append(20);
           list.deleteLast();
@@ -87,7 +87,7 @@ void main() {
       test(
         "print list",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.append(10);
           list.append(20);
           list.append(30);
@@ -98,7 +98,7 @@ void main() {
       test(
         "delete by value",
         () {
-          var list = LinkedList();
+          var list = LinkedList<int>();
           list.append(10);
           list.append(20);
           list.append(30);
