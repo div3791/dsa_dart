@@ -1,5 +1,5 @@
 List<int> countAnagramsOccurance(String s, String p) {
-  if (s.isEmpty) return [];
+  if (s.isEmpty || p.isEmpty) return [];
   if (p.length > s.length) return [];
   if (p == s) return [0];
 
