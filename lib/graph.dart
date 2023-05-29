@@ -1,6 +1,8 @@
 void main(List<String> args) {
-  int vertex = 4;
+  createGraph(4);
+}
 
+Map<int, List<Edge<int>>> createGraph(int vertex) {
   Map<int, List<Edge<int>>> graph = {};
 
   for (int i = 0; i < vertex; i++) {
@@ -19,10 +21,18 @@ void main(List<String> args) {
   graph[3]?.add(Edge(3, 1));
   graph[3]?.add(Edge(3, 2));
 
-  for (int i = 0; i < graph[3]!.length; i++) {
-    Edge edge = graph[3]![i];
-    print(edge.dest);
+  return graph;
+}
+
+List<int> getConnectedNodes(Map<int, List<Edge<int>>> graph, int node) {
+  List<int> result = [];
+
+  if (node < 0 || node > graph.length - 1) return [];
+
+  for (int i = 0; i < graph[node]!.length; i++) {
+    result.add(graph[node]![i].dest!);
   }
+  return result;
 }
 
 class Edge<T> {
