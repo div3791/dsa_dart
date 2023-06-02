@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:test/test.dart';
 
 import '../../bin/sliding_window/first_negative_number.dart';
