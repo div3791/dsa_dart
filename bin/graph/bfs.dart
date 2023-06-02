@@ -44,12 +44,11 @@ bfs(
     if (visited[front] == false) {
       result.add(front);
       visited[front] = true;
-    }
-
-    for (int i = 0; i < adjList[front]!.length; i++) {
-      if (adjList[front]![i] < visited.length &&
-          visited[adjList[front]![i]] == false) {
-        queue.add(adjList[front]![i]);
+      for (int i = 0; i < adjList[front]!.length; i++) {
+        if (adjList[front]![i] < visited.length &&
+            visited[adjList[front]![i]] == false) {
+          queue.add(adjList[front]![i]);
+        }
       }
     }
   }
