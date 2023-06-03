@@ -17,6 +17,7 @@ bool isCycled(List<List<int>> adj, int V) {
 bool _getCycle(int node, List<bool> visited, List<List<int>> adj) {
   Map<int, int> parent = {};
   parent[node] = -1;
+  visited[node] = true;
 
   Queue<int> queue = ListQueue<int>();
   queue.add(node);
@@ -24,15 +25,15 @@ bool _getCycle(int node, List<bool> visited, List<List<int>> adj) {
   while (queue.isNotEmpty) {
     int item = queue.removeFirst();
 
-    if (!visited[item]) {
-      visited[item] = true;
-      for (int i = 0; i < adj[item].length; i++) {
-        if (visited[adj[item][i]] && adj[item][i] != parent[item]) {
-          return true;
-        } else if (!visited[adj[item][i]]) {
-          queue.add(adj[item][i]);
-          parent[adj[item][i]] = item;
-        }
+    for (int i = 0; i < adj[item].length; i++) {
+      if (adj[item][i] < visited.length &&
+          visited[adj[item][i]] &&
+          adj[item][i] != parent[item]) {
+        return true;
+      } else if (adj[item][i] < visited.length && !visited[adj[item][i]]) {
+        queue.add(adj[item][i]);
+        visited[adj[item][i]] = true;
+        parent[adj[item][i]] = item;
       }
     }
   }

@@ -27,5 +27,15 @@ void main() {
 
       expect(isCycled(adj, V), false);
     });
+    test('Cycle check 3', () {
+      int V = 4;
+      List<List<int>> adj = [
+        [4, 2],
+        [1, 2],
+        [2, 3],
+      ];
+
+      expect(isCycled(adj, V), false);
+    });
   });
 }
