@@ -28,7 +28,7 @@ void main() {
       expect(isCycled(adj, V), false);
     });
     test('Cycle check 3', () {
-      int V = 4;
+      int V = 5;
       List<List<int>> adj = [
         [4, 2],
         [1, 2],
