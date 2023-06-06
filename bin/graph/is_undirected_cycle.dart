@@ -2,6 +2,9 @@ import 'dart:collection';
 
 bool isCycled(List<List<int>> adj, int V) {
   List<bool> visited = List.filled(V, false);
+  // for (int i = 0; i < V; i++) {
+  //   visited.add(false);
+  // }
   for (int i = 0; i < V; i++) {
     if (!visited[i]) {
       bool temp = _getCycleWithDfs(adj, visited, i, -1);
@@ -23,17 +26,17 @@ bool _getCycle(int node, List<bool> visited, List<List<int>> adj) {
   queue.add(node);
 
   while (queue.isNotEmpty) {
-    int item = queue.removeFirst();
+    int item = queue.first;
+    queue.removeFirst();
 
-    for (int i = 0; i < adj[item].length; i++) {
-      if (adj[item][i] < visited.length &&
-          visited[adj[item][i]] &&
-          adj[item][i] != parent[item]) {
+    for (int j = 0; j < adj[item].length; j++) {
+      int i = adj[item][j];
+      if (visited[i] && i != parent[item]) {
         return true;
-      } else if (adj[item][i] < visited.length && !visited[adj[item][i]]) {
-        queue.add(adj[item][i]);
-        visited[adj[item][i]] = true;
-        parent[adj[item][i]] = item;
+      } else if (!visited[i]) {
+        queue.add(i);
+        visited[i] = true;
+        parent[i] = item;
       }
     }
   }
@@ -43,17 +46,13 @@ bool _getCycle(int node, List<bool> visited, List<List<int>> adj) {
 
 bool _getCycleWithDfs(
     List<List<int>> adj, List<bool> visited, int current, int parent) {
-  if (current < visited.length) visited[current] = true;
-
-  for (int i = 0; i < adj[current].length; i++) {
-    int v = adj[current][i];
-    if (v == parent) {
-      continue;
-    }
-    if (v < visited.length && visited[v]) {
-      return true;
-    }
-    if (_getCycleWithDfs(adj, visited, v, current)) {
+  visited[current] = true;
+  for (int i in adj[current]) {
+    if (!visited[i]) {
+      if (_getCycleWithDfs(adj, visited, i, current)) {
+        return true;
+      }
+    } else if (parent != i) {
       return true;
     }
   }
