@@ -11,6 +11,7 @@ void main() {
         ["1", "1", "0", "0", "0"],
         ["0", "0", "0", "0", "0"]
       ];
+
       expect(numOfIcelands(input), 1);
     });
     test('Case 2', () {
