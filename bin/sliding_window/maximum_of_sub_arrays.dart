@@ -2,7 +2,6 @@ import 'dart:math';
 
 List<int> maximumOfSubArrays(List<int> arr, int window) {
   int i = 0, j = 0;
-  List<int> queue = [];
   List<int> result = [];
   int maximum = double.negativeInfinity.floor();
 
