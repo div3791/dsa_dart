@@ -35,3 +35,19 @@ List<int>? inOrder(TreeNode? root, [List<int>? result]) {
 
   return result;
 }
+
+List<int> preOrderIterative(TreeNode? root) {
+  List<int> result = [];
+  if (root == null) return result;
+  final stack = <TreeNode>[];
+  stack.add(root);
+
+  while (stack.isNotEmpty) {
+    var node = stack.removeLast();
+    result.add(node.value);
+    if (node.right != null) stack.add(node.right!);
+    if (node.left != null) stack.add(node.left!);
+  }
+
+  return result;
+}
