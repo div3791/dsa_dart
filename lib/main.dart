@@ -1,19 +1,13 @@
 void main(List<String> args) {
-  var a = B();
-  a.play();
+  final a = show(10);
+  print(a.first);
 }
 
-mixin A {
-  void playA() => print('playing A');
-  void play();
-}
-
-mixin C {
-  void playC() => print('playing C');
-  void play();
-}
-
-class B with A, C {
-  @override
-  void play() {}
+Iterable<int> show(n) sync* {
+  print('Start');
+  for (int i = 0; i < n; i++) {
+    print('generating');
+    yield i;
+  }
+  print('end');
 }

@@ -11,7 +11,7 @@ void main() {
         stack.push(10);
         stack.push(20);
         stack.push(30);
-        expect(stack.first, 10);
+        expect(stack.peek, 30);
       },
     );
     test(
@@ -22,7 +22,7 @@ void main() {
         stack.push(20);
         stack.push(30);
         stack.pop();
-        expect(stack.first, 20);
+        expect(stack.peek, 20);
       },
     );
   });
