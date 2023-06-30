@@ -1,12 +1,11 @@
 void main(List<String> args) {
-  final a = show(10);
-  print(a.first);
+  show(1);
 }
 
 Iterable<int> show(n) sync* {
   print('Start');
   for (int i = 0; i < n; i++) {
-    print('generating');
+    print(i);
     yield i;
   }
   print('end');
